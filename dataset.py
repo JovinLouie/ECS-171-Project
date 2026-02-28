@@ -42,12 +42,21 @@ selected_features = [
 X = df[selected_features]
 y = df["Target_binary"]
 
-# 75–25 stratified split
-X_train, X_test, y_train, y_test = train_test_split(
+# 60-15–25 stratified split (train-val-test)
+X_train, X_temp, y_train, y_temp = train_test_split(
     X,
     y,
-    test_size=0.25,
+    test_size=0.40,
     stratify=y,
+    random_state=set_random_seed
+)
+
+# Split temp into 15% validation and 25% test
+X_val, X_test, y_val, y_test = train_test_split(
+    X_temp,
+    y_temp,
+    test_size=0.625,  # 25 / 40
+    stratify=y_temp,
     random_state=set_random_seed
 )
 
@@ -58,8 +67,12 @@ train_df["Target_binary"] = y_train
 test_df = X_test.copy()
 test_df["Target_binary"] = y_test
 
+val_df = X_val.copy()
+val_df["Target_binary"] = y_val
+
 # Export datasets
 train_df.to_csv("data/train_dataset.csv", index=False)
 test_df.to_csv("data/test_dataset.csv", index=False)
+val_df.to_csv("data/val_dataset.csv", index=False)
 
-print("Training and test datasets exported successfully.")
+print("Training, validation, and test datasets exported successfully.")
