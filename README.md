@@ -1,5 +1,5 @@
-# ECS 171 Project
+# ECS 171 Project: Student Dropout Prevention
 
-By \
-Professor \
-ECS 171\
+By Jovin Louie, Cesar Aguirre, Joey Suen, Jessica Zhao, Eli Seligman \
+Professor Rafatirad \
+ECS 171: Machine Learning
