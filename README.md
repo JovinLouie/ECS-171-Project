@@ -1,6 +1,6 @@
 # ECS 171 Project: Student Dropout Prevention
 
-By Jovin Louie, Cesar Aguirre, Joey Suen, Jessica Zhao, Eli Seligman \
+By Team 1: Jovin Louie, Cesar Aguirre, Joey Suen, Jessica Zhao, Eli Seligman \
 Professor Setareh Rafatirad \
 ECS 171: Machine Learning \
 Winter Quarter 2026 - UC Davis
